@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ausman — Premium Global Sourcing & Custom Manufacturing Partner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: 'var(--bg-main)',
+              navy: 'var(--bg-card)',
+              slate: 'var(--bg-sec)',
+              emerald: '#1D4ED8', // Royal Blue
+              teal: '#3B82F6',    // Vibrant Sky Blue
+              indigo: '#DC2626',  // Brand Red
+              purple: '#EF4444',  // Light Red
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: #030712;
+      --bg-card: #0B0F19;
+      --bg-sec: #1E293B;
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --text-accent: #FFFFFF;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --glass-panel-bg: rgba(15, 23, 42, 0.45);
+      --glass-panel-light-bg: rgba(255, 255, 255, 0.02);
+    }
+
+    body.light-mode {
+      --bg-main: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-sec: #E2E8F0;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-accent: #0F172A;
+      --border-color: rgba(15, 23, 42, 0.08);
+      --glass-panel-bg: rgba(255, 255, 255, 0.75);
+      --glass-panel-light-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* ── Smooth Theme Transitions ── */
+    body, 
+    nav, 
+    section, 
+    footer, 
+    div, 
+    a, 
+    button, 
+    span, 
+    h1, 
+    h2, 
+    h3, 
+    p, 
+    textarea, 
+    input,
+    pre {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* ── Light Mode UI Overrides ── */
+    body.light-mode .text-white {
+      color: #0F172A !important;
+    }
+    body.light-mode .text-gray-300 {
+      color: #334155 !important;
+    }
+    body.light-mode .text-gray-400 {
+      color: #475569 !important;
+    }
+    body.light-mode .text-gray-500 {
+      color: #64748B !important;
+    }
+    body.light-mode #navbar a:not(.wa-btn) {
+      color: #334155;
+    }
+    body.light-mode #navbar a:not(.wa-btn):hover {
+      color: #0F172A;
+    }
+    body.light-mode #mobile-menu {
+      background: rgba(255, 255, 255, 0.98);
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+    body.light-mode #mobile-menu a {
+      color: #334155 !important;
+    }
+    body.light-mode #mobile-menu a:hover {
+      color: #0F172A !important;
+    }
+    body.light-mode input,
+    body.light-mode textarea {
+      color: #0F172A !important;
+      background: rgba(15, 23, 42, 0.04) !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
+    }
+    body.light-mode input::placeholder,
+    body.light-mode textarea::placeholder {
+      color: #94A3B8 !important;
+    }
+    body.light-mode pre {
+      color: #1E293B !important;
+      background: rgba(15, 23, 42, 0.05) !important;
+    }
+    body.light-mode #wa-float span {
+      background: #FFFFFF !important;
+      color: #0F172A !important;
+      border-color: rgba(15, 23, 42, 0.08) !important;
+    }
+    body.light-mode #hamburger span {
+      background-color: #0F172A !important;
+    }
+    body.light-mode .glass-panel {
+      background: rgba(255, 255, 255, 0.75);
+      border-color: rgba(15, 23, 42, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);
+    }
+    body.light-mode .glass-panel-light {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(15, 23, 42, 0.06);
+    }
+    body.light-mode .glow-card {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.06);
+    }
+    body.light-mode .glow-card::before {
+      background: linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+    }
+    body.light-mode .glow-card:hover {
+      box-shadow: 0 20px 40px -15px rgba(29, 78, 216, 0.12);
+    }
+    body.light-mode .glow-card:hover::before {
+      background: linear-gradient(135deg, #1D4ED8, #DC2626);
+    }
+    body.light-mode .category-btn,
+    body.light-mode .quantity-btn,
+    body.light-mode .timeline-btn {
+      background: rgba(15, 23, 42, 0.04);
+      border-color: rgba(15, 23, 42, 0.08);
+      color: #475569;
+    }
+    body.light-mode .category-btn:hover,
+    body.light-mode .quantity-btn:hover,
+    body.light-mode .timeline-btn:hover {
+      background: rgba(15, 23, 42, 0.08);
+      border-color: rgba(15, 23, 42, 0.15);
+      color: #0F172A;
+    }
+    body.light-mode .glow-orb {
+      mix-blend-mode: multiply;
+      opacity: 0.05;
+      filter: blur(140px);
+    }
+    body.light-mode .grid-mesh {
+      background-image: linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    }
+    body.light-mode ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    body.light-mode footer {
+      background: #F1F5F9 !important;
+      border-color: rgba(15, 23, 42, 0.08) !important;
+    }
+    body.light-mode #products {
+      background: #FFFFFF !important;
+    }
+    body.light-mode section.bg-\[\#070b16\] {
+      background-color: #FFFFFF !important;
+    }
+    body.light-mode .step-dot.bg-white\/10 {
+      background: rgba(15, 23, 42, 0.05);
+      color: #64748B;
+    }
+    body.light-mode .step-dot.bg-brand-emerald {
+      background: #1D4ED8;
+      color: #FFFFFF;
+    }
+
+
+    /* ── Custom Grid Mesh Overlay ── */
+    .grid-mesh {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* ── Floating Glow Orbs ── */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+      animation: float-slow 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes float-slow {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(30px, -40px) scale(1.1);
+      }
+      100% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    /* ── Reveal animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+    .delay-3 { transition-delay: 0.24s; }
+    .delay-4 { transition-delay: 0.32s; }
+    .delay-5 { transition-delay: 0.40s; }
+
+    /* ── Premium Glassmorphism ── */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-panel-light {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    /* ── Custom Scrollbar ── */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #1D4ED8, #DC2626);
+      border-radius: 4px;
+    }
+
+    /* ── Card Glow Beam effect ── */
+    .glow-card {
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glow-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      transition: background 0.4s;
+    }
+
+    .glow-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(29, 78, 216, 0.15);
+    }
+
+    .glow-card:hover::before {
+      background: linear-gradient(135deg, #1D4ED8, #DC2626);
+    }
+
+    /* ── Filter Animation Helper ── */
+    .filter-item {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s;
+    }
+
+    .filter-item.filtered-out {
+      transform: scale(0.92) translateY(10px);
+      opacity: 0;
+      position: absolute;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen">
+
+  <!-- Glow Background Orbs -->
+  <div class="glow-orb w-[400px] h-[400px] bg-brand-emerald top-[5%] left-[-10%]"></div>
+  <div class="glow-orb w-[500px] h-[500px] bg-brand-indigo top-[40%] right-[-10%]" style="animation-delay: -3s;"></div>
+  <div class="glow-orb w-[450px] h-[450px] bg-brand-purple bottom-[15%] left-[5%]" style="animation-delay: -7s;"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+  ═══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Premium PNG Logo Container -->
+      <a href="#home" class="flex items-center group py-1">
+        <div class="h-9 md:h-11 flex items-center bg-white px-3 py-1.5 rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+          <img src="logo.png" alt="Ausman Logo" class="h-full w-auto object-contain" />
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Home</a>
+        <a href="#products" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Products</a>
+        <a href="#why-us" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Why Us</a>
+        <a href="#rfq-wizard" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Submit RFQ</a>
+        
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="theme-toggle" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 focus:outline-none" aria-label="Toggle Theme">
+          <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg id="theme-toggle-moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+
+        <!-- Contact CTA Button -->
+        <a href="https://wa.me/+923034779991?text=Hi%20Ausman%20team,%20I%20need%20a%20quick%20quote%20for%20my%20B2B%20business%20requirements."
+          target="_blank" rel="noopener" class="relative group overflow-hidden rounded-xl p-[1px] focus:outline-none">
+          <span class="absolute inset-0 bg-gradient-to-r from-brand-emerald to-brand-indigo rounded-xl group-hover:opacity-100 transition-opacity duration-300"></span>
+          <div class="relative flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-dark transition-all duration-300 group-hover:bg-transparent">
+            <svg class="w-4 h-4 text-[#25D366] group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+            </svg>
+            <span class="text-sm font-bold text-white group-hover:text-white transition-colors duration-300">Quick Quote</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mobile controls (Theme toggle + Hamburger) -->
+      <div class="flex items-center gap-3 md:hidden">
+        <!-- Theme Toggle Button (Mobile) -->
+        <button id="theme-toggle-mobile" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-300 focus:outline-none" aria-label="Toggle Theme">
+          <svg id="theme-toggle-sun-mobile" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg id="theme-toggle-moon-mobile" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+        <!-- Hamburger -->
+        <button id="hamburger" class="flex flex-col gap-1.5 p-2 focus:outline-none" aria-label="Menu">
+          <span id="burger-line1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="burger-line2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="burger-line3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 top-full bg-brand-dark/98 backdrop-blur-lg border-b border-white/10 px-6 py-8 transition-all duration-300">
+      <div class="flex flex-col gap-5">
+        <a href="#home" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Home</a>
+        <a href="#products" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Products</a>
+        <a href="#why-us" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Why Us</a>
+        <a href="#rfq-wizard" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Submit RFQ</a>
+        <a href="https://wa.me/+923034779991?text=Hi%20Ausman%20team,%20I%20need%20a%20quick%20quote%20for%20my%20B2B%20business%20requirements."
+          target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-base shadow-lg shadow-[#25D366]/20 hover:scale-[1.02] transition-all duration-200">
+          <svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+          </svg>
+          Quick Quote on WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="home" class="relative min-h-screen flex items-center pt-32 pb-24 px-6 lg:px-16 overflow-hidden">
+    <!-- Grid Overlay -->
+    <div class="absolute inset-0 grid-mesh opacity-30 z-0"></div>
+
+    <div class="max-w-7xl mx-auto w-full z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column (Copy) -->
+        <div class="lg:col-span-7 text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 reveal">
+            <span class="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+            <span class="text-xs font-semibold tracking-wider text-gray-300 uppercase">Trusted B2B Sourcing Partner</span>
+          </div>
+
+          <h1 class="font-display font-extrabold text-white tracking-tight leading-[1.05] mb-6 reveal delay-1 text-4xl sm:text-5xl lg:text-6xl">
+            Streamlining Your <br />
+            <span class="bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-indigo bg-clip-text text-transparent">Global Supply Chain</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-400 leading-relaxed max-w-xl mb-10 reveal delay-2">
+            We provide custom sportswear manufacturing, corporate gifts, premium packaging, and on-demand industrial sourcing tailored to help local and international brands grow at scale.
+          </p>
+
+          <div class="flex flex-wrap gap-4 items-center reveal delay-3">
+            <a href="#rfq-wizard" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-emerald to-brand-teal text-brand-dark font-bold text-sm sm:text-base hover:shadow-lg hover:shadow-brand-emerald/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+              Submit RFQ Sourcing
+            </a>
+            <a href="#products" class="flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-sm sm:text-base hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+              Explore Products
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Quality assurance badges -->
+          <div class="grid grid-cols-3 gap-4 pt-12 mt-12 border-t border-white/10 reveal delay-4">
+            <div class="flex flex-col gap-1.5">
+              <span class="text-white font-bold text-sm">ISO Quality Standards</span>
+              <span class="text-xs text-gray-500">Rigorous inspection processes</span>
+            </div>
+            <div class="flex flex-col gap-1.5 border-l border-white/10 pl-4">
+              <span class="text-white font-bold text-sm">Global Logistics</span>
+              <span class="text-xs text-gray-500">Exporting to 15+ countries</span>
+            </div>
+            <div class="flex flex-col gap-1.5 border-l border-white/10 pl-4">
+              <span class="text-white font-bold text-sm">Fast Turnaround</span>
+              <span class="text-xs text-gray-500">Sampling in 7-10 working days</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column (Stats Glass Dashboard) -->
+        <div class="lg:col-span-5 reveal-right delay-2">
+          <div class="relative p-8 rounded-3xl glass-panel">
+            
+            <!-- Absolute decoration glows -->
+            <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-emerald/25 rounded-full blur-2xl"></div>
+            
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-teal mb-6">Ausman Track Record</p>
+
+            <div class="grid grid-cols-2 gap-6">
+              
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <span class="font-display font-extrabold text-3xl sm:text-4xl text-white block mb-1" id="stat-projects">500+</span>
+                <span class="text-xs text-gray-400">Projects Delivered</span>
+              </div>
+              
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <span class="font-display font-extrabold text-3xl sm:text-4xl text-white block mb-1" id="stat-clients">200+</span>
+                <span class="text-xs text-gray-400">Global B2B Clients</span>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <span class="font-display font-extrabold text-3xl sm:text-4xl text-white block mb-1" id="stat-countries">15+</span>
+                <span class="text-xs text-gray-400">Export Countries</span>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <span class="font-display font-extrabold text-3xl sm:text-4xl text-white block mb-1" id="stat-rate">98%</span>
+                <span class="text-xs text-gray-400">Client Satisfaction</span>
+              </div>
+
+            </div>
+
+            <!-- Mini category tags -->
+            <div class="mt-8 pt-8 border-t border-white/5">
+              <span class="text-xs text-gray-500 block mb-3 font-semibold">Active RFQ Procurement</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-[11px] font-semibold text-brand-teal px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20">Hoodies</span>
+                <span class="text-[11px] font-semibold text-gray-300 px-3 py-1 rounded-full bg-white/5 border border-white/10">Activewear</span>
+                <span class="text-[11px] font-semibold text-gray-300 px-3 py-1 rounded-full bg-white/5 border border-white/10">Kraft Packing</span>
+                <span class="text-[11px] font-semibold text-gray-300 px-3 py-1 rounded-full bg-white/5 border border-white/10">Metal Keyrings</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     PRODUCTS & DYNAMIC FILTERS
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="products" class="relative py-24 px-6 lg:px-16 bg-[#070b16]">
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <!-- Section header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-emerald block mb-3">Product Catalog</span>
+        <h2 class="font-display font-extrabold text-white tracking-tight leading-tight text-3xl sm:text-4xl lg:text-5xl">
+          End-to-End Custom Manufacturing
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-emerald to-brand-teal mx-auto mt-5 rounded-full"></div>
+        <p class="text-gray-400 text-sm sm:text-base max-w-lg mx-auto mt-4 leading-relaxed">
+          Filter through our core competencies. We manufacture to exact custom brand specifications.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex flex-wrap justify-center items-center gap-2 mb-12 reveal delay-1">
+        <button class="filter-btn active px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-brand-emerald/30 bg-brand-emerald/10 text-brand-teal transition-all duration-300" data-filter="all">
+          All Sourcing
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="sportswear">
+          Sportswear
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="gifts">
+          Corporate Gifts
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="packaging">
+          Packaging
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="custom">
+          Custom Sourcing
+        </button>
+      </div>
+
+      <!-- Product Grid (8 Items) -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
+        
+        <!-- Card 1 (Sportswear) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="sportswear">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Hoodies -->
+              <img src="hoodie_product.png" alt="Custom Hoodies & Athleisure" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Sportswear</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Premium Apparel</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Custom Hoodies & Athleisure</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Premium grade heavy-blend hoodies, t-shirts, joggers, and activewear cut-and-sewn to brand design patterns.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                MOQ: 50 pcs
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Fleece & Cotton Terry
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Custom%20Hoodies%20%26%20Athleisure%20sourcing.%20Can%20you%20share%20fabric%20options?" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 2 (Sportswear) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="sportswear">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Jerseys -->
+              <img src="jersey_product.png" alt="Team Uniforms & Jerseys" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Sportswear</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Athletic Wear</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Team Uniforms & Jerseys</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Dry-fit sublimation uniforms for football, basketball, cricket, and gym performance brands.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Moisture-wicking mesh fabrics
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Full color sublimation dye
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Team%20Uniforms%20%26%20Jerseys%20sourcing.%20Can%20you%20provide%20pricing%20samples?" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 3 (Corporate Gifts) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="gifts">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Gifts -->
+              <img src="gift_product.png" alt="Corporate Gift Sets" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Gifts</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Executive Gifting</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Corporate Gift Sets</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Sleek corporate gifts comprising custom organizers, smart notebooks, thermos mugs, and branded pen sets.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Engraved metal logo printing
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Magnetic cardboard gift box
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Corporate%20Gift%20Sets%20sourcing.%20Can%20you%20share%20your%20gifting%20catalog?" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 4 (Corporate Gifts) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="gifts">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Tech Promo -->
+              <img src="tech_product.png" alt="Powerbanks & USB Accessories" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Gifts</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Tech Merchandising</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Powerbanks &amp; USB Accessories</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Promotional electronic accessories, quick-charge powerbanks, customized dynamic USB drives with client logos.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                CE &amp; RoHS safety certified
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                1-year tech warranty
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Powerbanks%20%26%20Tech%20Accessories%20sourcing.%20Please%20send%20specs%20and%20quotations." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 5 (Packaging) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="packaging">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Packaging -->
+              <img src="box_product.png" alt="Custom Kraft & Rigid Boxes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Packaging</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Branded Supplies</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Custom Kraft &amp; Rigid Boxes</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Eco-friendly custom corrugated shipping mailers, luxury rigid cosmetic boxes, and custom retail card packaging.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Biodegradable &amp; Recycled pulp
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                CMYK / Pantone offset print
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Custom%20Kraft%20%26%20Rigid%20Boxes%20sourcing.%20Can%20I%20share%20dimensions%20for%20a%20pricing%20quote?" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 6 (Packaging) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="packaging">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Hang Tags -->
+              <img src="tag_product.png" alt="Hang Tags & Product Labels" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Packaging</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Retail Accessories</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Hang Tags &amp; Product Labels</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Clothing product hang tags, woven main-labels, wash care instructions tags, and heat-transfer sticker tags.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Woven damask thread count
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Matte/Gloss lamination card
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Hang%20Tags%20%26%20Woven%20Labels%20sourcing.%20Please%20share%20pricing%20tiers." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 7 (Custom Sourcing) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="custom">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image OEM Sourcing -->
+              <img src="component_product.png" alt="Industrial Components Sourcing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Custom</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">OEM / Manufacturing</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Industrial Components Sourcing</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Precision CNC machined metal parts, plastic injection molds, customized silicone elements, and industrial components.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Technical drawing sampling (CAD)
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Material testing compliance certificates
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I%20have%20an%20RFQ%20for%20Industrial%20OEM%20Components.%20Can%20I%20submit%20our%20engineering%20CAD%20drawings?" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 8 (Custom Sourcing) -->
+        <div class="filter-item glow-card p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="custom">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group">
+              <!-- Custom Image Eco Materials -->
+              <img src="fabric_product.png" alt="Raw Materials & Fabrics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Custom</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Sustainable Sourcing</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Raw Materials &amp; Fabrics</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Direct bulk sourcing of specialty textiles, certified organic cotton, recycled polyester filaments, and eco resins.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                GOTS &amp; OEKO-TEX certified
+              </li>
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Mill direct bulk prices
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I%20want%20to%20source%20Raw%20Materials%20or%20Fabrics.%20Do%20you%20source%20OEKO-TEX%20certified%20organic%20cotton?" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     WHY CHOOSE US (B2B ADVANTAGES)
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="why-us" class="py-24 px-6 lg:px-16 bg-brand-dark relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <!-- Top header layout -->
+      <div class="grid lg:grid-cols-2 gap-10 items-end mb-16 pb-8 border-b border-white/5">
+        <div class="reveal-left">
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal block mb-3">Core Pillars</span>
+          <h2 class="font-display font-extrabold text-white tracking-tight leading-tight text-3xl sm:text-4xl lg:text-5xl">
+            Why Enterprise Brands <br class="hidden sm:inline" />Choose Ausman
+          </h2>
+        </div>
+        <div class="reveal-right">
+          <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+            We operate as an extension of your procurement team, combining engineering oversight, multi-stage quality assurance controls, and a vast logistics network to eliminate sourcing friction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Pillar 1 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between h-72 reveal delay-1">
+          <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-teal mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21m0 0l-1.813-5.096M9 21h3m-3 0H6m11.813-5.096L17 21m0 0l-1.813-5.096M17 21h3m-3 0h-3" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Custom Manufacturing</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">From initial concepts and CAD blueprints to physical samples, we inspect structural tolerances at every step of sampling.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between h-72 reveal delay-2">
+          <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-teal mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Global Cargo Logistics</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Exporting to 15+ countries. We handle customs documentation clearance, DDP door-delivery shipping, and FOB freight rates.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between h-72 reveal delay-3">
+          <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-teal mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Strict QA Auditing</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Multi-stage audits. We check pre-production raw fabrics, inline manufacturing quality, and final AQL random audits before dispatch.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between h-72 reveal delay-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-teal mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.756 12 12 12c-.756 0-1.536-.22-2.121-.659-1.172-.879-1.172-2.303 0-3.182 1.172-.879 3.07-.879 4.242 0L15 8.818M9 21h6" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Bulk Pricing Tiers</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Highly competitive tiered scaling options that lower unit costs on high volume orders, maximizing B2B procurement budgets.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     SOURCING PROCESS SECTION
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="py-24 px-6 lg:px-16 bg-[#070b16] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal block mb-3">Workflow</span>
+        <h2 class="font-display font-extrabold text-white tracking-tight text-3xl sm:text-4xl lg:text-5xl">Our Step-by-Step Sourcing Process</h2>
+        <p class="text-gray-400 text-sm max-w-md mx-auto mt-4 leading-relaxed">How we take your product from brief to delivered consignment smoothly.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        
+        <!-- Step 1 -->
+        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col justify-between h-56 reveal delay-1">
+          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">01</span>
+          <div>
+            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 1</span>
+            <h3 class="font-display font-bold text-base text-white mb-1.5">Submit RFQ</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Specify your designs, targets, and quantity requirements. Our team reviews specs within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col justify-between h-56 reveal delay-2">
+          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">02</span>
+          <div>
+            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 2</span>
+            <h3 class="font-display font-bold text-base text-white mb-1.5">Sampling &amp; CAD</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">We develop patterns, build CAD specifications drawings, and deliver physical pre-production samples for your check.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col justify-between h-56 reveal delay-3">
+          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">03</span>
+          <div>
+            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 3</span>
+            <h3 class="font-display font-bold text-base text-white mb-1.5">Mass Production</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Upon sample confirmation, production begins. We perform inline inspections and log quality checklists.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col justify-between h-56 reveal delay-4">
+          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">04</span>
+          <div>
+            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 4</span>
+            <h3 class="font-display font-bold text-base text-white mb-1.5">Quality Audit &amp; Cargo</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">We run final AQL quality inspection logs, package in heavy-duty shipping cartons, and coordinate export dispatch.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     INTERACTIVE RFQ FORM WIZARD
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="rfq-wizard" class="py-24 px-6 lg:px-16 bg-brand-dark border-t border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 grid-mesh opacity-10 z-0"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left details column -->
+        <div class="lg:col-span-5 text-left reveal-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-emerald/10 border border-brand-emerald/30 text-brand-teal rounded-full text-xs font-semibold mb-6">
+            <span class="w-1.5 h-1.5 bg-brand-teal rounded-full"></span>
+            RFQ Procurement
+          </div>
+          
+          <h2 class="font-display font-extrabold text-white tracking-tight leading-tight text-3xl sm:text-4xl lg:text-5xl mb-6">
+            Ready to Build Your <br />
+            <span class="bg-gradient-to-r from-brand-teal to-brand-indigo bg-clip-text text-transparent">Supply Chain?</span>
+          </h2>
+          
+          <p class="text-gray-400 text-sm leading-relaxed mb-8">
+            Tell us about your product sourcing needs. Fill out the step-by-step wizard to formulate a detailed request, check your live preview template, and submit directly to our head of procurement.
+          </p>
+
+          <!-- Contact items with SVG icons -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 py-3 border-b border-white/5">
+              <div class="w-10 h-10 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center text-[#25D366]">
+                <svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">WhatsApp Helpline</span>
+                <a href="https://wa.me/+923034779991" class="text-sm font-semibold text-white hover:text-[#25D366] transition-colors">+92 303 4779991</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 py-3 border-b border-white/5">
+              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-brand-teal">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Email Inquiry</span>
+                <span class="text-sm font-semibold text-white">ausman@gmail.com</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column (RFQ Wizard Panel) -->
+        <div class="lg:col-span-7 reveal-right">
+          <div class="p-8 rounded-3xl glass-panel relative">
+            
+            <!-- Step Indicators -->
+            <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/5">
+              <div class="flex items-center gap-2">
+                <span class="step-dot w-6 h-6 rounded-full bg-brand-emerald text-brand-dark flex items-center justify-center text-[10px] font-bold" id="dot-1">1</span>
+                <span class="text-xs font-semibold text-white">Product Spec</span>
+              </div>
+              <div class="h-[1px] bg-white/10 flex-grow mx-4"></div>
+              <div class="flex items-center gap-2">
+                <span class="step-dot w-6 h-6 rounded-full bg-white/10 text-gray-400 flex items-center justify-center text-[10px] font-bold" id="dot-2">2</span>
+                <span class="text-xs font-semibold text-gray-400" id="label-step-2">Sourcing Data</span>
+              </div>
+              <div class="h-[1px] bg-white/10 flex-grow mx-4"></div>
+              <div class="flex items-center gap-2">
+                <span class="step-dot w-6 h-6 rounded-full bg-white/10 text-gray-400 flex items-center justify-center text-[10px] font-bold" id="dot-3">3</span>
+                <span class="text-xs font-semibold text-gray-400" id="label-step-3">Confirm Details</span>
+              </div>
+            </div>
+
+            <!-- RFQ FORM STATE WIZARD -->
+            <form id="rfq-wizard-form" onsubmit="event.preventDefault();">
+              
+              <!-- STEP 1: Product Specifications -->
+              <div id="wizard-step-1" class="space-y-6">
+                
+                <div>
+                  <label class="text-xs font-bold text-gray-300 uppercase block mb-3">1. Select Product Category</label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <button type="button" class="category-btn p-3.5 rounded-xl border border-brand-emerald/30 bg-brand-emerald/10 text-white text-xs font-semibold hover:border-brand-emerald transition-colors text-center" data-category-val="Sportswear">
+                      🧥 Sportswear
+                    </button>
+                    <button type="button" class="category-btn p-3.5 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-category-val="Corporate Gifts">
+                      🎁 Corp. Gifts
+                    </button>
+                    <button type="button" class="category-btn p-3.5 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-category-val="Packaging Material">
+                      📦 Packaging
+                    </button>
+                    <button type="button" class="category-btn p-3.5 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-category-val="Custom Sourcing">
+                      🌐 Custom RFQ
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="rfq-desc" class="text-xs font-bold text-gray-300 uppercase block mb-2">2. Product Specifications &amp; Brief</label>
+                  <textarea id="rfq-desc" rows="4" class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all" placeholder="Tell us about the fabric specifications, sizes, customization styles, printing layers, target materials, or general design details..."></textarea>
+                </div>
+
+                <div class="flex justify-end pt-4">
+                  <button type="button" onclick="nextStep(2)" class="px-6 py-3 rounded-xl bg-brand-emerald text-brand-dark font-bold text-xs hover:scale-[1.02] active:scale-[0.98] transition-transform">
+                    Next Sourcing Steps →
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 2: Volume & Logistics -->
+              <div id="wizard-step-2" class="hidden space-y-6">
+                
+                <div>
+                  <label class="text-xs font-bold text-gray-300 uppercase block mb-3">1. Target Quantity (MOQ: 50 pcs)</label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <button type="button" class="quantity-btn p-3 rounded-xl border border-brand-emerald/30 bg-brand-emerald/10 text-white text-xs font-semibold transition-colors text-center" data-qty-val="50-200">
+                      50 - 200 pcs
+                    </button>
+                    <button type="button" class="quantity-btn p-3 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-qty-val="200-1000">
+                      200 - 1,000 pcs
+                    </button>
+                    <button type="button" class="quantity-btn p-3 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-qty-val="1000-5000">
+                      1k - 5k pcs
+                    </button>
+                    <button type="button" class="quantity-btn p-3 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-qty-val="5000+">
+                      5,000+ pcs
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="text-xs font-bold text-gray-300 uppercase block mb-3">2. Target Delivery Speed</label>
+                  <div class="grid grid-cols-3 gap-3">
+                    <button type="button" class="timeline-btn p-3 rounded-xl border border-brand-emerald/30 bg-brand-emerald/10 text-white text-xs font-semibold transition-colors text-center" data-time-val="Urgent (Less than 30 Days)">
+                      ⚡ Urgent (&lt; 30d)
+                    </button>
+                    <button type="button" class="timeline-btn p-3 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-time-val="Standard (1-3 Months)">
+                      📅 Standard (1-3m)
+                    </button>
+                    <button type="button" class="timeline-btn p-3 rounded-xl border border-white/5 bg-white/5 text-gray-400 text-xs font-semibold hover:border-white/20 transition-colors text-center" data-time-val="Flexible Timeline">
+                      🍃 Flexible Timeline
+                    </button>
+                  </div>
+                </div>
+
+                <div class="flex justify-between pt-4">
+                  <button type="button" onclick="prevStep(1)" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs hover:bg-white/10 transition-colors">
+                    ← Back
+                  </button>
+                  <button type="button" onclick="nextStep(3)" class="px-6 py-3 rounded-xl bg-brand-emerald text-brand-dark font-bold text-xs hover:scale-[1.02] active:scale-[0.98] transition-transform">
+                    Next: Contact Details →
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 3: Contact details & Live Preview -->
+              <div id="wizard-step-3" class="hidden space-y-6">
+                
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="rfq-name" class="text-xs font-bold text-gray-300 uppercase block mb-1.5">Contact Name *</label>
+                    <input type="text" id="rfq-name" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all" placeholder="Contact Name" />
+                  </div>
+                  <div>
+                    <label for="rfq-company" class="text-xs font-bold text-gray-300 uppercase block mb-1.5">Company Name</label>
+                    <input type="text" id="rfq-company" class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all" placeholder="Your business name" />
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="rfq-email" class="text-xs font-bold text-gray-300 uppercase block mb-1.5">Email Address *</label>
+                    <input type="email" id="rfq-email" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all" placeholder="Corporate email" />
+                  </div>
+                  <div>
+                    <label for="rfq-phone" class="text-xs font-bold text-gray-300 uppercase block mb-1.5">WhatsApp / Phone *</label>
+                    <input type="text" id="rfq-phone" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all" placeholder="Country code + number" />
+                  </div>
+                </div>
+
+                <!-- Custom Live Preview box -->
+                <div class="relative p-4 rounded-xl bg-black/40 border border-white/5 group/draft">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-[10px] font-bold text-brand-emerald uppercase tracking-widest">Live Message Draft Preview</span>
+                    <button type="button" id="copy-draft-btn" class="text-[10px] font-bold text-gray-400 hover:text-brand-teal flex items-center gap-1.5 transition-colors focus:outline-none">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25A2.25 2.25 0 003 9.75v10.5A2.25 2.25 0 005.25 22.5h9a2.25 2.25 0 002.25-2.25z" />
+                      </svg>
+                      Copy Draft
+                    </button>
+                  </div>
+                  <pre id="rfq-draft" class="text-xs text-gray-400 font-mono whitespace-pre-wrap leading-relaxed max-h-36 overflow-y-auto"></pre>
+                </div>
+
+                <div class="flex justify-between pt-4">
+                  <button type="button" onclick="prevStep(2)" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs hover:bg-white/10 transition-colors">
+                    ← Back
+                  </button>
+                  <button type="button" onclick="submitRfq()" class="flex items-center gap-2 px-8 py-3 rounded-xl bg-[#25D366] text-white hover:bg-[#20ba5a] font-bold text-xs hover:shadow-lg hover:shadow-[#25D366]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+                    Submit RFQ to WhatsApp
+                    <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FOOTER SECTION
+  ═══════════════════════════════════════════════════════════ -->
+  <footer id="contact" class="py-16 px-6 lg:px-16 bg-[#02050D] border-t border-white/5 text-gray-400 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+        <!-- Column 1 (Brand) -->
+        <div class="lg:col-span-2 space-y-6">
+          <a href="#home" class="inline-flex items-center group py-1 animate-pulse">
+            <div class="h-9 md:h-11 flex items-center bg-white px-3 py-1.5 rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+              <img src="logo.png" alt="Ausman Logo" class="h-full w-auto object-contain" />
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed max-w-sm text-gray-400">
+            A premium global sourcing and custom manufacturing B2B partner. We supply activewear apparel, printed boxes, corporate merchandise, and customized raw materials.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://wa.me/+923034779991" target="_blank" rel="noopener"
+              class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-[#25D366] transition-all duration-300">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 (Category links) -->
+        <div>
+          <h4 class="font-display font-semibold text-white text-sm uppercase tracking-widest mb-6">Directory</h4>
+          <div class="flex flex-col gap-3.5 text-sm">
+            <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20custom%20sportswear%20production." target="_blank" rel="noopener" class="hover:text-brand-teal transition-colors">Sportswear &amp; Apparel</a>
+            <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20promotional%20corporate%20gifts." target="_blank" rel="noopener" class="hover:text-brand-teal transition-colors">Corporate Gifts</a>
+            <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20custom%20branded%20packaging." target="_blank" rel="noopener" class="hover:text-brand-teal transition-colors">Rigid &amp; Kraft Packaging</a>
+            <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'd%20like%20to%20submit%20an%20RFQ%20for%20specialty%20custom%20sourcing." target="_blank" rel="noopener" class="hover:text-brand-teal transition-colors">Specialty Custom Sourcing</a>
+          </div>
+        </div>
+
+        <!-- Column 3 (Quick Contacts) -->
+        <div>
+          <h4 class="font-display font-semibold text-white text-sm uppercase tracking-widest mb-6">Reach Us</h4>
+          <div class="flex flex-col gap-4 text-sm">
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-[#25D366] mt-1 flex-shrink-0 fill-currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+              </svg>
+              <a href="https://wa.me/+923034779991" target="_blank" rel="noopener" class="hover:text-[#25D366] transition-colors">+92 303 4779991</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-teal mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <span>ausman@gmail.com</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-teal mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span>Lahore Fortress, Pakistan</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 mt-8 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs">
+        <p>© 2026 Ausman. All rights reserved.</p>
+        <p class="text-gray-600">Designed for enterprise B2B procurement</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FLOATING WHATSAPP WIDGET
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="wa-float" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
+    <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-dark border border-white/10 px-4 py-2 rounded-xl text-xs font-semibold text-white whitespace-nowrap shadow-lg">
+      Chat with us on WhatsApp
+    </span>
+    <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20visiting%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20sourcing%20project."
+      target="_blank" rel="noopener" aria-label="WhatsApp Helpline"
+      class="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 active:scale-95 transition-all duration-300 hover:bg-[#20ba5a]">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.533 5.857L.054 23.5l5.799-1.519A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.716.974.99-3.622-.234-.372A9.818 9.818 0 1112 21.818z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+    // 1. Scroll effect on Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('glass-panel', 'shadow-2xl', 'py-3');
+        navbar.classList.remove('py-4');
+      } else {
+        navbar.classList.remove('glass-panel', 'shadow-2xl', 'py-3');
+        navbar.classList.add('py-4');
+      }
+    });
+
+    // 2. Mobile Menu Controller
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bLine1 = document.getElementById('burger-line1');
+    const bLine2 = document.getElementById('burger-line2');
+    const bLine3 = document.getElementById('burger-line3');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        mobileMenu.classList.remove('hidden');
+        bLine1.classList.add('rotate-45', 'translate-y-2');
+        bLine2.classList.add('opacity-0');
+        bLine3.classList.add('-rotate-45', '-translate-y-2');
+      }
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      bLine1.classList.remove('rotate-45', 'translate-y-2');
+      bLine2.classList.remove('opacity-0');
+      bLine3.classList.remove('-rotate-45', '-translate-y-2');
+    }
+
+    // 3. Dynamic Category Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productGrid = document.getElementById('products-grid');
+    const productItems = document.querySelectorAll('.filter-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle Active Button Styles
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'border-brand-emerald/30', 'bg-brand-emerald/10', 'text-brand-teal');
+          b.classList.add('border-white/5', 'bg-white/5', 'text-gray-400');
+        });
+        btn.classList.add('active', 'border-brand-emerald/30', 'bg-brand-emerald/10', 'text-brand-teal');
+        btn.classList.remove('border-white/5', 'bg-white/5', 'text-gray-400');
+
+        const filterVal = btn.getAttribute('data-filter');
+
+        // Apply visual filtering
+        productItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          if (filterVal === 'all' || itemCategory === filterVal) {
+            item.classList.remove('filtered-out');
+          } else {
+            item.classList.add('filtered-out');
+          }
+        });
+      });
+    });
+
+    // 4. Scroll Reveal IntersectionObserver
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // 5. Interactive RFQ Wizard State Machine
+    let rfqData = {
+      category: 'Sportswear',
+      description: '',
+      quantity: '50-200',
+      timeline: 'Urgent (Less than 30 Days)',
+      name: '',
+      company: '',
+      email: '',
+      phone: ''
+    };
+
+    // Category button handling
+    const catBtns = document.querySelectorAll('.category-btn');
+    catBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catBtns.forEach(b => {
+          b.classList.remove('border-brand-emerald', 'border-brand-emerald/30', 'bg-brand-emerald/10', 'text-white');
+          b.classList.add('border-white/5', 'bg-white/5', 'text-gray-400');
+        });
+        btn.classList.add('border-brand-emerald', 'bg-brand-emerald/10', 'text-white');
+        btn.classList.remove('border-white/5', 'bg-white/5', 'text-gray-400');
+        rfqData.category = btn.getAttribute('data-category-val');
+        compileDraft();
+      });
+    });
+
+    // Quantity button handling
+    const qtyBtns = document.querySelectorAll('.quantity-btn');
+    qtyBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        qtyBtns.forEach(b => {
+          b.classList.remove('border-brand-emerald', 'border-brand-emerald/30', 'bg-brand-emerald/10', 'text-white');
+          b.classList.add('border-white/5', 'bg-white/5', 'text-gray-400');
+        });
+        btn.classList.add('border-brand-emerald', 'bg-brand-emerald/10', 'text-white');
+        btn.classList.remove('border-white/5', 'bg-white/5', 'text-gray-400');
+        rfqData.quantity = btn.getAttribute('data-qty-val');
+        compileDraft();
+      });
+    });
+
+    // Timeline button handling
+    const timeBtns = document.querySelectorAll('.timeline-btn');
+    timeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        timeBtns.forEach(b => {
+          b.classList.remove('border-brand-emerald', 'border-brand-emerald/30', 'bg-brand-emerald/10', 'text-white');
+          b.classList.add('border-white/5', 'bg-white/5', 'text-gray-400');
+        });
+        btn.classList.add('border-brand-emerald', 'bg-brand-emerald/10', 'text-white');
+        btn.classList.remove('border-white/5', 'bg-white/5', 'text-gray-400');
+        rfqData.timeline = btn.getAttribute('data-time-val');
+        compileDraft();
+      });
+    });
+
+    // Handle Text Inputs
+    document.getElementById('rfq-desc').addEventListener('input', (e) => {
+      rfqData.description = e.target.value;
+      compileDraft();
+    });
+    document.getElementById('rfq-name').addEventListener('input', (e) => {
+      rfqData.name = e.target.value;
+      compileDraft();
+    });
+    document.getElementById('rfq-company').addEventListener('input', (e) => {
+      rfqData.company = e.target.value;
+      compileDraft();
+    });
+    document.getElementById('rfq-email').addEventListener('input', (e) => {
+      rfqData.email = e.target.value;
+      compileDraft();
+    });
+    document.getElementById('rfq-phone').addEventListener('input', (e) => {
+      rfqData.phone = e.target.value;
+      compileDraft();
+    });
+
+    // Wizard navigation controls
+    function nextStep(stepNum) {
+      if (stepNum === 2) {
+        // Simple client-side check for description
+        if (!rfqData.description.trim()) {
+          alert('Please enter a brief description of your specifications.');
+          return;
+        }
+        document.getElementById('wizard-step-1').classList.add('hidden');
+        document.getElementById('wizard-step-2').classList.remove('hidden');
+        // Indicator
+        document.getElementById('dot-2').classList.replace('bg-white/10', 'bg-brand-emerald');
+        document.getElementById('dot-2').classList.replace('text-gray-400', 'text-brand-dark');
+        document.getElementById('label-step-2').classList.replace('text-gray-400', 'text-white');
+      } else if (stepNum === 3) {
+        document.getElementById('wizard-step-2').classList.add('hidden');
+        document.getElementById('wizard-step-3').classList.remove('hidden');
+        // Indicator
+        document.getElementById('dot-3').classList.replace('bg-white/10', 'bg-brand-emerald');
+        document.getElementById('dot-3').classList.replace('text-gray-400', 'text-brand-dark');
+        document.getElementById('label-step-3').classList.replace('text-gray-400', 'text-white');
+        compileDraft();
+      }
+    }
+
+    function prevStep(stepNum) {
+      if (stepNum === 1) {
+        document.getElementById('wizard-step-2').classList.add('hidden');
+        document.getElementById('wizard-step-1').classList.remove('hidden');
+        // Indicator reset
+        document.getElementById('dot-2').classList.replace('bg-brand-emerald', 'bg-white/10');
+        document.getElementById('dot-2').classList.replace('text-brand-dark', 'text-gray-400');
+        document.getElementById('label-step-2').classList.replace('text-white', 'text-gray-400');
+      } else if (stepNum === 2) {
+        document.getElementById('wizard-step-3').classList.add('hidden');
+        document.getElementById('wizard-step-2').classList.remove('hidden');
+        // Indicator reset
+        document.getElementById('dot-3').classList.replace('bg-brand-emerald', 'bg-white/10');
+        document.getElementById('dot-3').classList.replace('text-brand-dark', 'text-gray-400');
+        document.getElementById('label-step-3').classList.replace('text-white', 'text-gray-400');
+      }
+    }
+
+    function compileDraft() {
+      const draft = 
+`Hi Ausman team, I'd like to submit an RFQ:
+
+*Sourcing Specifications*
+- Category: ${rfqData.category}
+- Quantity: ${rfqData.quantity}
+- Delivery Speed: ${rfqData.timeline}
+- Requirements: ${rfqData.description || '(Enter specs in Step 1)'}
+
+*Company & Contact details*
+- Name: ${rfqData.name || '(Enter in Step 3)'}
+- Company: ${rfqData.company || 'N/A'}
+- Email: ${rfqData.email || '(Enter in Step 3)'}
+- Contact WhatsApp/Phone: ${rfqData.phone || '(Enter in Step 3)'}`;
+
+      document.getElementById('rfq-draft').textContent = draft;
+      return draft;
+    }
+
+    function submitRfq() {
+      // Validate step 3 fields
+      if (!rfqData.name.trim() || !rfqData.email.trim() || !rfqData.phone.trim()) {
+        alert('Please fill out the name, email, and phone fields to submit.');
+        return;
+      }
+
+      const rawMsg = compileDraft();
+      const encodedMsg = encodeURIComponent(rawMsg);
+      const waUrl = `https://wa.me/+923034779991?text=${encodedMsg}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // Animated Count Up Function for B2B Trust Stats
+    function animateValue(obj, start, end, duration, suffix = "") {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start) + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    // Trigger count up animation on load
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        animateValue(document.getElementById('stat-projects'), 0, 500, 1500, "+");
+        animateValue(document.getElementById('stat-clients'), 0, 200, 1500, "+");
+        animateValue(document.getElementById('stat-countries'), 0, 15, 1500, "+");
+        animateValue(document.getElementById('stat-rate'), 0, 98, 1500, "%");
+      }, 500);
+    });
+
+    // Init draft view
+    compileDraft();
+
+    // 6. Premium Theme Toggling Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+    const sunIcon = document.getElementById('theme-toggle-sun');
+    const moonIcon = document.getElementById('theme-toggle-moon');
+    const sunIconMobile = document.getElementById('theme-toggle-sun-mobile');
+    const moonIconMobile = document.getElementById('theme-toggle-moon-mobile');
+
+    // Sync icons and layout state based on active theme
+    function updateThemeUI(isLight) {
+      if (isLight) {
+        document.body.classList.add('light-mode');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        sunIconMobile.classList.remove('hidden');
+        moonIconMobile.classList.add('hidden');
+      } else {
+        document.body.classList.remove('light-mode');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        sunIconMobile.classList.add('hidden');
+        moonIconMobile.classList.remove('hidden');
+      }
+    }
+
+    // Read stored value on load
+    const savedTheme = localStorage.getItem('theme');
+    const isLightMode = savedTheme === 'light';
+    updateThemeUI(isLightMode);
+
+    function toggleTheme() {
+      const currentlyLight = document.body.classList.contains('light-mode');
+      const nextThemeIsLight = !currentlyLight;
+      localStorage.setItem('theme', nextThemeIsLight ? 'light' : 'dark');
+      updateThemeUI(nextThemeIsLight);
+    }
+
+    // Attach listeners
+    themeToggleBtn.addEventListener('click', toggleTheme);
+    themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+    // 7. Copy to Clipboard logic for RFQ draft
+    const copyDraftBtn = document.getElementById('copy-draft-btn');
+    copyDraftBtn.addEventListener('click', () => {
+      const draftText = compileDraft();
+      navigator.clipboard.writeText(draftText).then(() => {
+        const originalText = copyDraftBtn.innerHTML;
+        copyDraftBtn.innerHTML = `
+          <svg class="w-3.5 h-3.5 text-brand-emerald animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+          <span class="text-brand-emerald">Copied!</span>
+        `;
+        setTimeout(() => {
+          copyDraftBtn.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
