@@ -67,11 +67,14 @@
       --glass-panel-light-bg: rgba(255, 255, 255, 0.9);
     }
 
+    html,
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg-main);
       color: var(--text-main);
       overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
     }
 
     /* ── Smooth Theme Transitions ── */
@@ -369,10 +372,12 @@
 
 <body class="relative min-h-screen">
 
-  <!-- Glow Background Orbs -->
-  <div class="glow-orb w-[400px] h-[400px] bg-brand-emerald top-[5%] left-[-10%]"></div>
-  <div class="glow-orb w-[500px] h-[500px] bg-brand-indigo top-[40%] right-[-10%]" style="animation-delay: -3s;"></div>
-  <div class="glow-orb w-[450px] h-[450px] bg-brand-purple bottom-[15%] left-[5%]" style="animation-delay: -7s;"></div>
+  <!-- Glow Background Orbs Container -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="glow-orb w-[400px] h-[400px] bg-brand-emerald top-[5%] left-[-10%]"></div>
+    <div class="glow-orb w-[500px] h-[500px] bg-brand-indigo top-[40%] right-[-10%]" style="animation-delay: -3s;"></div>
+    <div class="glow-orb w-[450px] h-[450px] bg-brand-purple bottom-[15%] left-[5%]" style="animation-delay: -7s;"></div>
+  </div>
 
   <!-- ═══════════════════════════════════════════════════════════
      NAVBAR
@@ -570,7 +575,7 @@
   <!-- ═══════════════════════════════════════════════════════════
      PRODUCTS & DYNAMIC FILTERS
   ═══════════════════════════════════════════════════════════ -->
-  <section id="products" class="relative py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#070b16]">
+  <section id="products" class="relative py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#070b16] overflow-hidden">
     <div class="max-w-7xl mx-auto relative z-10">
       
       <!-- Section header -->
