@@ -463,7 +463,7 @@
   </style>
 </head>
 
-<body class="relative min-h-screen">
+<body class="relative min-h-screen overflow-x-hidden">
 
   <!-- Glow Background Orbs Container -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -621,7 +621,7 @@
           <div class="relative p-5 sm:p-8 rounded-3xl glass-panel">
             
             <!-- Absolute decoration glows -->
-            <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-emerald/25 rounded-full blur-2xl"></div>
+            <div class="absolute -top-12 -right-0 sm:-right-12 w-24 h-24 bg-brand-emerald/25 rounded-full blur-2xl"></div>
             
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-teal mb-6">Ausman Track Record</p>
 
@@ -685,7 +685,7 @@
              </div>
           </div>
           <!-- Floating badge -->
-          <div class="absolute -bottom-6 -right-6 glass-panel-light p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+          <div class="absolute -bottom-6 -right-0 sm:-right-6 glass-panel-light p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
              <div class="w-12 h-12 bg-gradient-to-br from-brand-emerald to-brand-teal rounded-full flex items-center justify-center text-white font-bold text-lg">20+</div>
              <div>
                <p class="text-white font-bold text-sm">Years Experience</p>
@@ -752,7 +752,7 @@
 
         <!-- Square Item -->
         <div class="relative p-6 rounded-3xl glow-card bg-brand-navy border border-white/5 overflow-hidden group flex flex-col justify-end reveal delay-2">
-          <div class="absolute -top-12 -right-12 w-32 h-32 bg-brand-teal/20 rounded-full blur-2xl group-hover:bg-brand-teal/40 transition-colors duration-500"></div>
+          <div class="absolute -top-12 -right-0 sm:-right-12 w-32 h-32 bg-brand-teal/20 rounded-full blur-2xl group-hover:bg-brand-teal/40 transition-colors duration-500"></div>
           <div class="relative z-20 transition-transform duration-300 group-hover:translate-y-[-10px]">
              <span class="w-10 h-10 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125zM3.375 12h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125zM3.375 16.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125zM3.375 21h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
@@ -764,7 +764,7 @@
 
         <!-- Square Item -->
         <div class="relative p-6 rounded-3xl glow-card bg-brand-navy border border-white/5 overflow-hidden group flex flex-col justify-end reveal delay-3">
-           <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-brand-indigo/20 rounded-full blur-2xl group-hover:bg-brand-indigo/40 transition-colors duration-500"></div>
+           <div class="absolute -bottom-12 -left-0 sm:-left-6 w-32 h-32 bg-brand-indigo/20 rounded-full blur-2xl group-hover:bg-brand-indigo/40 transition-colors duration-500"></div>
            <div class="relative z-20 transition-transform duration-300 group-hover:translate-y-[-10px]">
              <span class="w-10 h-10 rounded-full bg-brand-indigo/20 flex items-center justify-center text-brand-indigo mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" /></svg>
@@ -809,20 +809,20 @@
       </div>
 
       <!-- Filter Controls -->
-      <div class="flex overflow-x-auto whitespace-nowrap md:flex-wrap md:justify-center items-center gap-2 mb-12 pb-3 md:pb-0 scrollbar-none max-w-full px-4 -mx-4 md:px-0 md:mx-0 reveal delay-1">
-        <button class="filter-btn active px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-brand-emerald/30 bg-brand-emerald/10 text-brand-teal transition-all duration-300" data-filter="all">
+      <div class="flex flex-wrap justify-center items-center gap-2 mb-12 reveal delay-1">
+        <button class="filter-btn active px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-brand-emerald/30 bg-brand-emerald/10 text-brand-teal transition-all duration-300" data-filter="all">
           All Sourcing
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="sportswear">
+        <button class="filter-btn px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="sportswear">
           Sportswear
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="gifts">
+        <button class="filter-btn px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="gifts">
           Corporate Gifts
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="packaging">
+        <button class="filter-btn px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="packaging">
           Packaging
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="custom">
+        <button class="filter-btn px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/20 transition-all duration-300" data-filter="custom">
           Custom Sourcing
         </button>
       </div>
