@@ -4,7 +4,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
   <title>Ausman — Official Custom Manufacturing Partner for Institutions & Clubs</title>
+  <meta name="description" content="Premium custom manufacturing and merchandising for universities, clubs, and corporate institutions. High-volume, ISO standard apparel, gifts, and packaging." />
+  <meta name="keywords" content="Custom Manufacturing Pakistan, Institutional Merch, University Hoodies, Corporate Gifts, Custom Packaging, B2B Sourcing" />
+  <meta name="author" content="Ausman Custom Manufacturing" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph (OG) for Social Media -->
+  <meta property="og:title" content="Ausman — Custom Manufacturing Partner" />
+  <meta property="og:description" content="Premium custom merchandise for Universities, Clubs & Corporations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ausman.com/" /> <!-- Replace with actual URL when deployed -->
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ausman — Custom Manufacturing Partner" />
+  <meta name="twitter:description" content="Premium custom merchandise for Universities, Clubs & Corporations." />
+
+  <!-- GEO Structured Data (JSON-LD) for Generative Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Ausman Custom Manufacturing",
+        "url": "https://www.ausman.com",
+        "logo": "https://www.ausman.com/logo.png",
+        "description": "Direct, high-volume custom manufacturing partner for institutional needs. Specializing in sportswear, corporate gifts, and custom packaging.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+92-303-4779991",
+          "contactType": "customer service",
+          "email": "ausman@gmail.com",
+          "areaServed": ["PK", "US", "UK", "EU"],
+          "availableLanguage": "en"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Ausman",
+        "url": "https://www.ausman.com",
+        "publisher": {
+          "@id": "https://www.ausman.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -358,6 +407,43 @@
       visibility: hidden;
     }
 
+    /* ── Infinite Marquee ── */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-text {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15);
+      color: transparent;
+    }
+    .marquee-text:hover {
+      color: #FFFFFF;
+      filter: drop-shadow(0 0 15px rgba(255,255,255,0.5));
+    }
+
+    body.light-mode .marquee-text {
+      -webkit-text-stroke: 1.5px rgba(15, 23, 42, 0.15);
+    }
+    body.light-mode .marquee-text:hover {
+      color: #0F172A;
+      filter: drop-shadow(0 0 15px rgba(15, 23, 42, 0.3));
+    }
+    
+    body.light-mode .marquee-mask-left {
+      background-image: linear-gradient(to right, #ffffff, transparent);
+    }
+    body.light-mode .marquee-mask-right {
+      background-image: linear-gradient(to left, #ffffff, transparent);
+    }
+
     /* Hide scrollbar for Chrome, Safari and Opera */
     .scrollbar-none::-webkit-scrollbar {
       display: none;
@@ -366,6 +452,13 @@
     .scrollbar-none {
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
+    }
+
+    body.light-mode .bento-gradient-1 {
+      background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7), transparent) !important;
+    }
+    body.light-mode .bento-gradient-2 {
+      background-image: linear-gradient(to top, rgba(52, 211, 153, 0.3), rgba(255, 255, 255, 0.9), transparent) !important;
     }
   </style>
 </head>
@@ -398,6 +491,7 @@
         <a href="#products" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Products</a>
         <a href="#why-us" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Why Us</a>
         <a href="#rfq-wizard" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Submit RFQ</a>
+        <a href="blogs.html" class="text-sm font-semibold text-brand-teal hover:text-white transition-colors duration-200">Blog</a>
         
         <!-- Theme Toggle Button (Desktop) -->
         <button id="theme-toggle" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 focus:outline-none" aria-label="Toggle Theme">
@@ -451,6 +545,7 @@
         <a href="#products" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Products</a>
         <a href="#why-us" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Why Us</a>
         <a href="#rfq-wizard" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Submit RFQ</a>
+        <a href="blogs.html" class="text-lg font-medium text-brand-teal hover:text-white" onclick="closeMobileMenu()">Blog</a>
         <a href="https://wa.me/+923034779991?text=Hi%20Ausman%20team,%20I%20need%20a%20quick%20quote%20for%20my%20B2B%20business%20requirements."
           target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-base shadow-lg shadow-[#25D366]/20 hover:scale-[1.02] transition-all duration-200">
           <svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
@@ -565,6 +660,129 @@
               </div>
             </div>
 
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     ABOUT US SECTION
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="about" class="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#040813] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Floating Image / Video Placeholder -->
+        <div class="relative group reveal-left">
+          <div class="absolute -inset-2 bg-gradient-to-r from-brand-emerald to-brand-teal rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+          <div class="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden glass-panel border border-white/10 flex items-center justify-center p-8 text-center bg-brand-navy">
+             <!-- Placeholder for a manufacturing image or brand video -->
+             <div class="space-y-4">
+               <svg class="w-16 h-16 text-brand-emerald mx-auto animate-pulse" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+               <h3 class="text-white font-display font-bold text-xl">Our Manufacturing Floor</h3>
+               <p class="text-gray-400 text-sm">State-of-the-art ISO 9001 Facility</p>
+             </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-6 -right-6 glass-panel-light p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+             <div class="w-12 h-12 bg-gradient-to-br from-brand-emerald to-brand-teal rounded-full flex items-center justify-center text-white font-bold text-lg">20+</div>
+             <div>
+               <p class="text-white font-bold text-sm">Years Experience</p>
+               <p class="text-gray-400 text-xs">In the industry</p>
+             </div>
+          </div>
+        </div>
+
+        <!-- Text Introduction -->
+        <div class="reveal-right">
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal block mb-3">Who is Ausman?</span>
+          <h2 class="font-display font-extrabold text-white tracking-tight leading-[1.1] text-3xl sm:text-4xl lg:text-5xl mb-6">
+            Pioneering Custom <br/>Institutional Manufacturing.
+          </h2>
+          <p class="text-gray-400 text-base leading-relaxed mb-6">
+            Ausman isn't just a supplier; we are your direct manufacturing arm. For over two decades, we've specialized in bypassing middlemen to bring universities, corporate entities, and sports clubs direct-to-factory pricing without sacrificing the premium quality demanded by top-tier institutions.
+          </p>
+          <p class="text-gray-400 text-base leading-relaxed mb-8">
+            From the initial raw material sourcing (like OEKO-TEX certified cotton) to the final corrugated delivery box arriving at your campus, we control the entire supply chain to ensure complete transparency, ethical labor practices, and unmatched speed.
+          </p>
+          
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-brand-emerald/10">
+              <svg class="w-6 h-6 text-brand-emerald" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div>
+              <p class="text-white font-bold text-sm">100% Guaranteed Compliance</p>
+              <p class="text-gray-500 text-xs">We exceed international labor &amp; safety laws.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     CORE SERVICES (BENTO BOX)
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="services" class="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-brand-dark relative overflow-hidden border-t border-white/5">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-emerald block mb-3">Our Expertise</span>
+        <h2 class="font-display font-extrabold text-white tracking-tight text-3xl sm:text-4xl lg:text-5xl">Comprehensive Services</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-emerald to-brand-teal mx-auto mt-5 rounded-full"></div>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+        
+        <!-- Large Item (Spans 2 cols) -->
+        <div class="md:col-span-2 relative p-6 sm:p-8 rounded-3xl glow-card bg-brand-navy border border-white/5 overflow-hidden group flex flex-col justify-end reveal delay-1">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 bento-gradient-1"></div>
+          <!-- Background Pattern -->
+          <div class="absolute inset-0 grid-mesh opacity-20 group-hover:scale-105 transition-transform duration-700 z-0"></div>
+          
+          <div class="relative z-20 transition-transform duration-300 group-hover:translate-y-[-10px]">
+            <span class="w-10 h-10 rounded-full bg-brand-emerald/20 flex items-center justify-center text-brand-teal mb-4 backdrop-blur-md">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </span>
+            <h3 class="font-display font-extrabold text-2xl text-white mb-2">B2B Bulk Production</h3>
+            <p class="text-sm text-gray-300 max-w-md">Our core competency. We handle mass production runs from 50 to 50,000+ units with exact color matching and sizing consistency across the entire batch.</p>
+          </div>
+        </div>
+
+        <!-- Square Item -->
+        <div class="relative p-6 rounded-3xl glow-card bg-brand-navy border border-white/5 overflow-hidden group flex flex-col justify-end reveal delay-2">
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-brand-teal/20 rounded-full blur-2xl group-hover:bg-brand-teal/40 transition-colors duration-500"></div>
+          <div class="relative z-20 transition-transform duration-300 group-hover:translate-y-[-10px]">
+             <span class="w-10 h-10 rounded-full bg-brand-teal/20 flex items-center justify-center text-brand-teal mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125zM3.375 12h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125zM3.375 16.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125zM3.375 21h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
+            </span>
+            <h3 class="font-display font-bold text-xl text-white mb-2">White-Label OEM</h3>
+            <p class="text-xs text-gray-400">Launch your own brand. We manufacture under your name with custom woven labels, tags, and zero Ausman branding.</p>
+          </div>
+        </div>
+
+        <!-- Square Item -->
+        <div class="relative p-6 rounded-3xl glow-card bg-brand-navy border border-white/5 overflow-hidden group flex flex-col justify-end reveal delay-3">
+           <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-brand-indigo/20 rounded-full blur-2xl group-hover:bg-brand-indigo/40 transition-colors duration-500"></div>
+           <div class="relative z-20 transition-transform duration-300 group-hover:translate-y-[-10px]">
+             <span class="w-10 h-10 rounded-full bg-brand-indigo/20 flex items-center justify-center text-brand-indigo mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" /></svg>
+            </span>
+            <h3 class="font-display font-bold text-xl text-white mb-2">Global Logistics</h3>
+            <p class="text-xs text-gray-400">Door-to-door DDP shipping worldwide. We handle all customs clearance, ocean freight, and air freight.</p>
+          </div>
+        </div>
+
+        <!-- Large Item (Spans 2 cols) -->
+        <div class="md:col-span-2 relative p-6 sm:p-8 rounded-3xl glow-card bg-brand-navy border border-white/5 overflow-hidden group flex flex-col justify-end reveal delay-4">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-emerald/80 via-black/60 to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-500 bento-gradient-2"></div>
+          <div class="relative z-20 transition-transform duration-300 group-hover:translate-y-[-10px]">
+            <span class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white mb-4 backdrop-blur-md">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L4.2 15.3m15.6 0v1.47a2.25 2.25 0 01-1.135 1.95L12 21l-6.665-2.28A2.25 2.25 0 014.2 16.77V15.3m15.6 0l-1.57.393m-15.6-.393l1.57.393" /></svg>
+            </span>
+            <h3 class="font-display font-extrabold text-2xl text-white mb-2">3D Sampling &amp; Prototyping</h3>
+            <p class="text-sm text-gray-200 max-w-md">Before you commit to a mass order, our CAD engineers and pattern makers will create precise physical prototypes and digital 3D renders for your board's approval.</p>
           </div>
         </div>
 
@@ -828,6 +1046,138 @@
           </a>
         </div>
 
+        <!-- Card 9 (Sportswear) -->
+        <div class="filter-item glow-card p-5 sm:p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="sportswear">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group bg-gradient-to-br from-brand-emerald/10 to-brand-teal/5">
+              <svg class="w-16 h-16 text-brand-emerald/50 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Sportswear</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Campus Legacy</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Custom Varsity Jackets</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Authentic wool blend and genuine leather sleeve letterman jackets customized for university societies and greek life.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Chenille &amp; embroidery patches
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Varsity%20Jackets." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 10 (Gifts) -->
+        <div class="filter-item glow-card p-5 sm:p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="gifts">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group bg-gradient-to-br from-brand-indigo/10 to-brand-teal/5">
+              <svg class="w-16 h-16 text-brand-indigo/50 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Gifts</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Eco-Stationery</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Sustainable Notebook Sets</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Recycled paper notebooks bound in vegan leather, perfect for student welcome kits and corporate seminars.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                FSC Certified paper
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Sustainable%20Notebooks." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 11 (Sportswear) -->
+        <div class="filter-item glow-card p-5 sm:p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="sportswear">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group bg-gradient-to-br from-brand-teal/10 to-brand-emerald/5">
+              <svg class="w-16 h-16 text-brand-teal/50 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Sportswear</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Corporate Casual</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Sublimated Polos</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Breathable pique cotton and poly-blend polo shirts featuring all-over sublimated graphics and embroidered logos.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Moisture-wicking
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Sublimated%20Polos." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+        <!-- Card 12 (Packaging) -->
+        <div class="filter-item glow-card p-5 sm:p-6 rounded-2xl bg-brand-navy border border-white/5 flex flex-col justify-between" data-category="packaging">
+          <div>
+            <div class="relative h-44 rounded-xl border border-white/5 flex items-center justify-center mb-5 overflow-hidden group bg-gradient-to-br from-brand-emerald/10 to-brand-teal/5">
+              <svg class="w-16 h-16 text-brand-emerald/50 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+              <div class="absolute top-3 right-3 bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full">Packaging</div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Eco-Promotional</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Sustainable Tote Bags</h3>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">Heavyweight organic canvas and recycled PET tote bags ideal for event giveaways and eco-friendly retail.</p>
+            <ul class="space-y-2 mb-6 border-t border-white/5 pt-4">
+              <li class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-brand-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Silk-screen printing
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/+923034779991?text=Hi%20Ausman,%20I'm%20interested%20in%20Tote%20Bags." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:border-brand-emerald hover:text-brand-dark font-bold text-xs transition-all duration-300">
+            Inquire Category
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Infinite Auto-Scrolling Marquee -->
+      <div class="mt-20 pt-16 border-t border-white/5 relative overflow-hidden reveal">
+        <div class="text-center mb-8">
+          <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase">Trusted By Institutions Worldwide</span>
+        </div>
+        
+        <!-- Gradient Masks -->
+        <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#070b16] to-transparent z-10 pointer-events-none mt-16 marquee-mask-left"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#070b16] to-transparent z-10 pointer-events-none mt-16 marquee-mask-right"></div>
+
+        <div class="flex group overflow-hidden">
+          <!-- Marquee Track 1 -->
+          <div class="flex flex-shrink-0 animate-marquee whitespace-nowrap items-center min-w-full justify-around">
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">OXFORD UNI</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">CAMBRIDGE</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">IMPERIAL</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">KING'S</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">UCL</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">LSE</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+          </div>
+          <!-- Marquee Track 2 (Clone for seamless loop) -->
+          <div class="flex flex-shrink-0 animate-marquee whitespace-nowrap items-center min-w-full justify-around" aria-hidden="true">
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">OXFORD UNI</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">CAMBRIDGE</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">IMPERIAL</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">KING'S</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">UCL</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+            <span class="marquee-text text-4xl md:text-5xl font-display font-extrabold px-6 md:px-10 transition-all duration-300 cursor-default text-transparent">LSE</span>
+            <span class="text-brand-teal/50 mx-2 text-2xl">✦</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -914,59 +1264,125 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-     SOURCING PROCESS SECTION
+     HOW WE WORK TIMELINE
   ═══════════════════════════════════════════════════════════ -->
-  <section class="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#070b16] relative overflow-hidden">
+  <section id="process" class="py-24 px-4 sm:px-8 lg:px-16 bg-[#040813] relative overflow-hidden border-t border-white/5">
+    <!-- Ambient background glows -->
+    <div class="absolute top-40 right-20 w-[500px] h-[500px] bg-brand-emerald/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-40 left-20 w-[500px] h-[500px] bg-brand-indigo/10 rounded-full blur-[120px] pointer-events-none"></div>
+    
     <div class="max-w-7xl mx-auto relative z-10">
       
-      <div class="text-center mb-16 reveal">
-        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal block mb-3">Workflow</span>
-        <h2 class="font-display font-extrabold text-white tracking-tight text-3xl sm:text-4xl lg:text-5xl">Our Institutional Workflow</h2>
-        <p class="text-gray-400 text-sm max-w-md mx-auto mt-4 leading-relaxed">How we take your club or university order from design brief to delivered consignment smoothly.</p>
+      <div class="text-center mb-20 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal block mb-3">Our Workflow</span>
+        <h2 class="font-display font-extrabold text-white tracking-tight text-3xl sm:text-4xl lg:text-5xl">How We Work</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-emerald to-brand-teal mx-auto mt-5 rounded-full"></div>
+        <p class="text-gray-400 text-sm sm:text-base max-w-lg mx-auto mt-6 leading-relaxed">From initial design brief to final container delivery. Our systematic approach ensures error-free mass manufacturing.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-        
-        <!-- Step 1 -->
-        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col items-center text-center lg:items-start lg:text-left justify-between min-h-[13rem] h-auto reveal delay-1">
-          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">01</span>
-          <div>
-            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 1</span>
-            <h3 class="font-display font-bold text-base text-white mb-1.5">Consultation & Brief</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">Discuss your university society or sports club requirements with our dedicated account managers.</p>
-          </div>
+      <!-- Timeline Container -->
+      <div class="relative max-w-4xl mx-auto" id="timeline-container">
+        <!-- The Track Line -->
+        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-white/5 -translate-x-1/2 rounded-full overflow-hidden">
+          <!-- The Neon Fill Line (Controlled by JS) -->
+          <div id="timeline-progress" class="absolute top-0 left-0 w-full h-0 bg-gradient-to-b from-brand-emerald to-brand-teal rounded-full shadow-[0_0_15px_rgba(52,211,153,0.8)] transition-all duration-200 ease-out"></div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col items-center text-center lg:items-start lg:text-left justify-between min-h-[13rem] h-auto reveal delay-2">
-          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">02</span>
-          <div>
-            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 2</span>
-            <h3 class="font-display font-bold text-base text-white mb-1.5">Design & Committee Approval</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">We develop custom patterns, 3D CADs, and physical samples for your committee or board to approve.</p>
+        <div class="space-y-12 md:space-y-24 pb-12">
+          
+          <!-- Phase 1 -->
+          <div class="relative flex flex-col md:flex-row items-center justify-between group timeline-item reveal-left">
+            <div class="hidden md:block w-5/12 text-right pr-12">
+              <span class="text-brand-emerald font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 1</span>
+              <h3 class="font-display font-bold text-2xl text-white mb-3">Consultation &amp; Brief</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">Discuss your requirements, target budget, and design ideas. We review tech packs or create them from scratch for your institution.</p>
+            </div>
+            <!-- Node -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-navy border-4 border-[#040813] flex items-center justify-center z-10 transition-colors duration-500 timeline-node">
+              <span class="w-3 h-3 rounded-full bg-white/20 transition-all duration-500 timeline-node-inner"></span>
+            </div>
+            <div class="md:hidden w-full pl-20 pr-4">
+              <span class="text-brand-emerald font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 1</span>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Consultation &amp; Brief</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">Discuss your requirements, target budget, and design ideas. We review tech packs or create them from scratch for your institution.</p>
+            </div>
+            <div class="hidden md:block w-5/12 pl-12 opacity-50 group-hover:opacity-100 transition-opacity">
+               <div class="glass-panel p-6 rounded-2xl border border-white/5">
+                 <img src="process_1.png" alt="Consultation" class="w-full h-32 object-cover rounded-xl opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-500">
+               </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col items-center text-center lg:items-start lg:text-left justify-between min-h-[13rem] h-auto reveal delay-3">
-          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">03</span>
-          <div>
-            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 3</span>
-            <h3 class="font-display font-bold text-base text-white mb-1.5">Bulk Manufacturing</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">Upon sample confirmation, mass production begins with strict quality controls tailored for bulk institutional orders.</p>
+          <!-- Phase 2 -->
+          <div class="relative flex flex-col md:flex-row-reverse items-center justify-between group timeline-item reveal-right">
+            <div class="hidden md:block w-5/12 text-left pl-12">
+              <span class="text-brand-teal font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 2</span>
+              <h3 class="font-display font-bold text-2xl text-white mb-3">Prototyping &amp; Samples</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">We develop custom patterns, digital 3D CADs, and physical samples for your committee to touch, feel, and approve before mass production.</p>
+            </div>
+            <!-- Node -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-navy border-4 border-[#040813] flex items-center justify-center z-10 transition-colors duration-500 timeline-node">
+              <span class="w-3 h-3 rounded-full bg-white/20 transition-all duration-500 timeline-node-inner"></span>
+            </div>
+            <div class="md:hidden w-full pl-20 pr-4">
+               <span class="text-brand-teal font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 2</span>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Prototyping &amp; Samples</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">We develop custom patterns, digital 3D CADs, and physical samples for your committee to touch, feel, and approve before mass production.</p>
+            </div>
+            <div class="hidden md:block w-5/12 pr-12 opacity-50 group-hover:opacity-100 transition-opacity">
+               <div class="glass-panel p-6 rounded-2xl border border-white/5">
+                 <img src="process_2.png" alt="Prototyping" class="w-full h-32 object-cover rounded-xl opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-500">
+               </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Step 4 -->
-        <div class="relative p-6 rounded-2xl glass-panel-light flex flex-col items-center text-center lg:items-start lg:text-left justify-between min-h-[13rem] h-auto reveal delay-4">
-          <span class="absolute top-4 right-4 font-display font-extrabold text-5xl text-white/5">04</span>
-          <div>
-            <span class="text-brand-teal font-bold text-xs uppercase tracking-widest block mb-2">Phase 4</span>
-            <h3 class="font-display font-bold text-base text-white mb-1.5">Campus/Club Delivery</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">We handle all logistics to deliver your premium customized merchandise directly to your campus or club headquarters.</p>
+          <!-- Phase 3 -->
+          <div class="relative flex flex-col md:flex-row items-center justify-between group timeline-item reveal-left">
+            <div class="hidden md:block w-5/12 text-right pr-12">
+              <span class="text-brand-indigo font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 3</span>
+              <h3 class="font-display font-bold text-2xl text-white mb-3">Bulk Manufacturing</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">Upon sample confirmation, our ISO-certified facilities begin mass production with strict multi-stage quality control audits.</p>
+            </div>
+            <!-- Node -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-navy border-4 border-[#040813] flex items-center justify-center z-10 transition-colors duration-500 timeline-node">
+              <span class="w-3 h-3 rounded-full bg-white/20 transition-all duration-500 timeline-node-inner"></span>
+            </div>
+            <div class="md:hidden w-full pl-20 pr-4">
+              <span class="text-brand-indigo font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 3</span>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Bulk Manufacturing</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">Upon sample confirmation, our ISO-certified facilities begin mass production with strict multi-stage quality control audits.</p>
+            </div>
+            <div class="hidden md:block w-5/12 pl-12 opacity-50 group-hover:opacity-100 transition-opacity">
+               <div class="glass-panel p-6 rounded-2xl border border-white/5">
+                 <img src="process_3.png" alt="Manufacturing" class="w-full h-32 object-cover rounded-xl opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-500">
+               </div>
+            </div>
           </div>
-        </div>
 
+          <!-- Phase 4 -->
+          <div class="relative flex flex-col md:flex-row-reverse items-center justify-between group timeline-item reveal-right">
+            <div class="hidden md:block w-5/12 text-left pl-12">
+              <span class="text-brand-emerald font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 4</span>
+              <h3 class="font-display font-bold text-2xl text-white mb-3">Global Cargo Delivery</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">We handle all ocean/air logistics and customs clearance, delivering your premium merchandise directly to your campus door.</p>
+            </div>
+            <!-- Node -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-navy border-4 border-[#040813] flex items-center justify-center z-10 transition-colors duration-500 timeline-node">
+              <span class="w-3 h-3 rounded-full bg-white/20 transition-all duration-500 timeline-node-inner"></span>
+            </div>
+            <div class="md:hidden w-full pl-20 pr-4">
+               <span class="text-brand-emerald font-bold text-xs uppercase tracking-[0.2em] mb-2 block">Phase 4</span>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Global Cargo Delivery</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">We handle all ocean/air logistics and customs clearance, delivering your premium merchandise directly to your campus door.</p>
+            </div>
+            <div class="hidden md:block w-5/12 pr-12 opacity-50 group-hover:opacity-100 transition-opacity">
+               <div class="glass-panel p-6 rounded-2xl border border-white/5">
+                 <img src="process_4.png" alt="Delivery" class="w-full h-32 object-cover rounded-xl opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-500">
+               </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -1193,6 +1609,65 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
+     LATEST FROM BLOG SECTION
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="blog-teaser" class="relative py-16 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal block mb-3">Ausman Insights</span>
+          <h2 class="font-display font-extrabold text-white text-3xl sm:text-4xl">Latest from our Blog</h2>
+        </div>
+        <a href="blogs.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white/10 transition-all duration-300 w-max">
+          Read All Articles
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Teaser 1 -->
+        <a href="fabric-for-varsity-jackets.html" class="glow-card p-5 rounded-2xl bg-brand-navy border border-white/5 flex flex-col group transition-all">
+          <div class="mb-4">
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Materials</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2 group-hover:text-brand-emerald transition-colors">Choosing the Right Fabric for Varsity Jackets</h3>
+            <p class="text-xs text-gray-400 line-clamp-3">A complete guide to wool blends, genuine leather, and sublimation patterns to make your university jackets stand out.</p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-gray-500 font-medium">Jun 4, 2026</span>
+            <span class="text-brand-teal font-bold text-xs group-hover:underline">Read More</span>
+          </div>
+        </a>
+
+        <!-- Teaser 2 -->
+        <a href="sustainable-packaging-2026.html" class="glow-card p-5 rounded-2xl bg-brand-navy border border-white/5 flex flex-col group transition-all">
+          <div class="mb-4">
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Eco-Friendly</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2 group-hover:text-brand-emerald transition-colors">Sustainable Packaging Trends for 2026</h3>
+            <p class="text-xs text-gray-400 line-clamp-3">How institutions are shifting towards biodegradable kraft packing and recycled pulp for alumni gifts and merchandise.</p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-gray-500 font-medium">May 28, 2026</span>
+            <span class="text-brand-teal font-bold text-xs group-hover:underline">Read More</span>
+          </div>
+        </a>
+
+        <!-- Teaser 3 -->
+        <a href="onboarding-kits-retention.html" class="glow-card p-5 rounded-2xl bg-brand-navy border border-white/5 flex flex-col group transition-all">
+          <div class="mb-4">
+            <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase block mb-1">Corporate</span>
+            <h3 class="font-display font-bold text-lg text-white mb-2 group-hover:text-brand-emerald transition-colors">Why Onboarding Kits Boost Employee Retention</h3>
+            <p class="text-xs text-gray-400 line-clamp-3">The ROI behind premium executive gifting and how custom tech accessories make new hires feel truly valued from day one.</p>
+          </div>
+          <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-gray-500 font-medium">May 15, 2026</span>
+            <span class="text-brand-teal font-bold text-xs group-hover:underline">Read More</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
      FOOTER SECTION
   ═══════════════════════════════════════════════════════════ -->
   <footer id="contact" class="py-12 sm:py-16 px-4 sm:px-8 lg:px-16 bg-[#02050D] border-t border-white/5 text-gray-400 relative z-10">
@@ -1373,6 +1848,55 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));
+
+    // Timeline Scroll Logic
+    const timelineContainer = document.getElementById('timeline-container');
+    const timelineProgress = document.getElementById('timeline-progress');
+    const timelineNodes = document.querySelectorAll('.timeline-node');
+    const timelineInnerNodes = document.querySelectorAll('.timeline-node-inner');
+
+    if (timelineContainer && timelineProgress) {
+      window.addEventListener('scroll', () => {
+        const containerRect = timelineContainer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate scroll progress relative to the container
+        let progress = 0;
+        
+        // When top of container reaches middle of screen
+        const startPoint = containerRect.top - (windowHeight / 2);
+        // When bottom of container reaches middle of screen
+        const endPoint = containerRect.bottom - (windowHeight / 2);
+        
+        if (startPoint < 0) {
+          const totalDistance = endPoint - startPoint;
+          const scrolledDistance = Math.abs(startPoint);
+          progress = Math.min(Math.max(scrolledDistance / totalDistance, 0), 1);
+        }
+
+        timelineProgress.style.height = `${progress * 100}%`;
+
+        // Highlight nodes as line passes them
+        const progressLineBottom = containerRect.top + (containerRect.height * progress);
+        
+        timelineNodes.forEach((node, index) => {
+          const nodeRect = node.getBoundingClientRect();
+          const nodeCenter = nodeRect.top + (nodeRect.height / 2);
+          
+          if (progressLineBottom >= nodeCenter) {
+            node.classList.remove('border-[#040813]');
+            node.classList.add('border-brand-emerald');
+            timelineInnerNodes[index].classList.remove('bg-white/20');
+            timelineInnerNodes[index].classList.add('bg-brand-emerald', 'shadow-[0_0_10px_#34d399]');
+          } else {
+            node.classList.add('border-[#040813]');
+            node.classList.remove('border-brand-emerald');
+            timelineInnerNodes[index].classList.add('bg-white/20');
+            timelineInnerNodes[index].classList.remove('bg-brand-emerald', 'shadow-[0_0_10px_#34d399]');
+          }
+        });
+      });
+    }
 
     // 5. Interactive RFQ Wizard State Machine
     let rfqData = {

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Ausman Blog — Insights on Custom Manufacturing & Sourcing</title>
+  <meta name="description" content="Read the latest insights from Ausman on custom manufacturing, sustainable packaging, corporate gifting, and sportswear trends." />
+  <meta name="keywords" content="Custom Manufacturing Blog, Sustainable Packaging, Corporate Gifting Trends, University Merch, B2B Sourcing Articles" />
+  <meta name="author" content="Ausman Custom Manufacturing" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph (OG) for Social Media -->
+  <meta property="og:title" content="Ausman Blog — Custom Manufacturing Insights" />
+  <meta property="og:description" content="Latest articles on institutional merch, apparel, and corporate gifts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ausman.com/blogs.html" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ausman Blog — Insights" />
+  <meta name="twitter:description" content="Latest articles on institutional merch, apparel, and corporate gifts." />
+
+  <!-- GEO Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Ausman Insights Blog",
+    "url": "https://www.ausman.com/blogs.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ausman Custom Manufacturing",
+      "logo": "https://www.ausman.com/logo.png"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: 'var(--bg-main)',
+              navy: 'var(--bg-card)',
+              slate: 'var(--bg-sec)',
+              emerald: '#1D4ED8', // Royal Blue
+              teal: '#3B82F6',    // Vibrant Sky Blue
+              indigo: '#DC2626',  // Brand Red
+              purple: '#EF4444',  // Light Red
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: #030712;
+      --bg-card: #0B0F19;
+      --bg-sec: #1E293B;
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --text-accent: #FFFFFF;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --glass-panel-bg: rgba(15, 23, 42, 0.45);
+      --glass-panel-light-bg: rgba(255, 255, 255, 0.02);
+    }
+
+    body.light-mode {
+      --bg-main: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-sec: #E2E8F0;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-accent: #0F172A;
+      --border-color: rgba(15, 23, 42, 0.08);
+      --glass-panel-bg: rgba(255, 255, 255, 0.75);
+      --glass-panel-light-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    html,
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    body, nav, section, footer, div, a, button, span, h1, h2, h3, p, input, pre {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Light Mode UI Overrides */
+    body.light-mode .text-white { color: #0F172A !important; }
+    body.light-mode .text-gray-300 { color: #334155 !important; }
+    body.light-mode .text-gray-400 { color: #475569 !important; }
+    body.light-mode .text-gray-500 { color: #64748B !important; }
+    body.light-mode #navbar a:not(.wa-btn) { color: #334155; }
+    body.light-mode #navbar a:not(.wa-btn):hover { color: #0F172A; }
+    body.light-mode #mobile-menu { background: rgba(255, 255, 255, 0.98); border-color: rgba(15, 23, 42, 0.08); }
+    body.light-mode #mobile-menu a { color: #334155 !important; }
+    body.light-mode #mobile-menu a:hover { color: #0F172A !important; }
+    body.light-mode #hamburger span { background-color: #0F172A !important; }
+    body.light-mode .glow-card { background: #FFFFFF; border-color: rgba(15, 23, 42, 0.08); box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.06); }
+    body.light-mode .glow-card:hover { box-shadow: 0 20px 40px -15px rgba(29, 78, 216, 0.12); }
+    body.light-mode .glow-orb { mix-blend-mode: multiply; opacity: 0.05; filter: blur(140px); }
+    body.light-mode footer { background: #F1F5F9 !important; border-color: rgba(15, 23, 42, 0.08) !important; }
+    body.light-mode .grid-mesh {
+      background-image: linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    }
+
+    .grid-mesh {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+      animation: float-slow 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes float-slow {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -40px) scale(1.1); }
+      100% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    .glow-card {
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glow-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(29, 78, 216, 0.15);
+      border-color: rgba(29, 78, 216, 0.3);
+    }
+
+  </style>
+</head>
+
+<body class="relative min-h-screen">
+
+  <!-- Glow Background Orbs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="glow-orb w-[400px] h-[400px] bg-brand-emerald top-[5%] left-[-10%]"></div>
+    <div class="glow-orb w-[500px] h-[500px] bg-brand-indigo top-[40%] right-[-10%]" style="animation-delay: -3s;"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     NAVBAR (Same as index.html)
+  ═══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center group py-1">
+        <div class="h-9 md:h-11 flex items-center bg-white px-3 py-1.5 rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+          <img src="logo.png" alt="Ausman Logo" class="h-full w-auto object-contain" />
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html#home" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Home</a>
+        <a href="index.html#products" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Products</a>
+        <a href="index.html#why-us" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Why Us</a>
+        <a href="index.html#rfq-wizard" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Submit RFQ</a>
+        <a href="blogs.html" class="text-sm font-semibold text-brand-teal hover:text-white transition-colors duration-200">Blog</a>
+        
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="theme-toggle" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 focus:outline-none" aria-label="Toggle Theme">
+          <svg id="theme-toggle-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg id="theme-toggle-moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+
+        <a href="https://wa.me/+923034779991?text=Hi%20Ausman%20team,%20I%20need%20a%20quick%20quote." target="_blank" rel="noopener" class="relative group overflow-hidden rounded-xl p-[1px] focus:outline-none">
+          <span class="absolute inset-0 bg-gradient-to-r from-brand-emerald to-brand-indigo rounded-xl group-hover:opacity-100 transition-opacity duration-300"></span>
+          <div class="relative flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-dark transition-all duration-300 group-hover:bg-transparent">
+            <span class="text-sm font-bold text-white group-hover:text-white transition-colors duration-300">Quick Quote</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mobile controls -->
+      <div class="flex items-center gap-3 md:hidden">
+        <button id="theme-toggle-mobile" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-300">
+          <svg id="theme-toggle-sun-mobile" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg id="theme-toggle-moon-mobile" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+        <button id="hamburger" class="flex flex-col gap-1.5 p-2 focus:outline-none">
+          <span id="burger-line1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="burger-line2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="burger-line3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 top-full bg-brand-dark/98 backdrop-blur-lg border-b border-white/10 px-6 py-8 transition-all duration-300">
+      <div class="flex flex-col gap-5">
+        <a href="index.html#home" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#products" class="text-lg font-medium text-gray-300 hover:text-white" onclick="closeMobileMenu()">Products</a>
+        <a href="blogs.html" class="text-lg font-medium text-brand-teal hover:text-white" onclick="closeMobileMenu()">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     BLOG HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="relative pt-40 pb-12 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <div class="absolute inset-0 grid-mesh opacity-30 z-0"></div>
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+        <span class="text-xs font-semibold tracking-wider text-gray-300 uppercase">Knowledge Base & Articles</span>
+      </div>
+      <h1 class="font-display font-extrabold text-white tracking-tight leading-[1.05] mb-4 text-4xl sm:text-5xl lg:text-6xl">
+        Ausman <span class="bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-indigo bg-clip-text text-transparent">Insights</span>
+      </h1>
+      <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+        Deep dives into custom manufacturing, sourcing trends, sustainable packaging, and institutional merchandise.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     BLOG GRID
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="relative py-16 px-4 sm:px-8 lg:px-16">
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Post 1 -->
+        <article class="glow-card rounded-2xl bg-brand-navy border border-white/5 flex flex-col group overflow-hidden">
+          <div class="h-48 bg-white/5 border-b border-white/5 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-emerald/20 to-brand-indigo/10 z-0 group-hover:scale-110 transition-transform duration-500"></div>
+            <h2 class="font-display font-extrabold text-2xl text-white relative z-10 text-center drop-shadow-md">Varsity Jackets<br>101</h2>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase px-2.5 py-1 bg-brand-teal/10 rounded-full border border-brand-teal/20">Materials</span>
+              <span class="text-xs text-gray-500 font-medium">Jun 4, 2026</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-brand-emerald transition-colors">Choosing the Right Fabric for Varsity Jackets</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">A complete guide to wool blends, genuine leather, and sublimation patterns to make your university jackets stand out for the class of 2026.</p>
+            <a href="fabric-for-varsity-jackets.html" class="mt-auto text-brand-teal font-bold text-sm group-hover:underline inline-flex items-center gap-1">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="glow-card rounded-2xl bg-brand-navy border border-white/5 flex flex-col group overflow-hidden">
+          <div class="h-48 bg-white/5 border-b border-white/5 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-teal/20 to-[#25D366]/20 z-0 group-hover:scale-110 transition-transform duration-500"></div>
+            <h2 class="font-display font-extrabold text-2xl text-white relative z-10 text-center drop-shadow-md">Eco Packaging<br>Trends</h2>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase px-2.5 py-1 bg-brand-teal/10 rounded-full border border-brand-teal/20">Eco-Friendly</span>
+              <span class="text-xs text-gray-500 font-medium">May 28, 2026</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-brand-emerald transition-colors">Sustainable Packaging Trends for 2026</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">How institutions are shifting towards biodegradable kraft packing and recycled pulp for alumni gifts and merchandise.</p>
+            <a href="sustainable-packaging-2026.html" class="mt-auto text-brand-teal font-bold text-sm group-hover:underline inline-flex items-center gap-1">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="glow-card rounded-2xl bg-brand-navy border border-white/5 flex flex-col group overflow-hidden">
+          <div class="h-48 bg-white/5 border-b border-white/5 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-indigo/20 to-brand-purple/20 z-0 group-hover:scale-110 transition-transform duration-500"></div>
+            <h2 class="font-display font-extrabold text-2xl text-white relative z-10 text-center drop-shadow-md">Executive<br>Onboarding</h2>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase px-2.5 py-1 bg-brand-teal/10 rounded-full border border-brand-teal/20">Corporate</span>
+              <span class="text-xs text-gray-500 font-medium">May 15, 2026</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-brand-emerald transition-colors">Why Onboarding Kits Boost Employee Retention</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">The ROI behind premium executive gifting and how custom tech accessories make new hires feel truly valued from day one.</p>
+            <a href="onboarding-kits-retention.html" class="mt-auto text-brand-teal font-bold text-sm group-hover:underline inline-flex items-center gap-1">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
+          </div>
+        </article>
+        
+        <!-- Post 4 -->
+        <article class="glow-card rounded-2xl bg-brand-navy border border-white/5 flex flex-col group overflow-hidden">
+          <div class="h-48 bg-white/5 border-b border-white/5 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-gray-700/30 to-brand-emerald/10 z-0 group-hover:scale-110 transition-transform duration-500"></div>
+            <h2 class="font-display font-extrabold text-2xl text-white relative z-10 text-center drop-shadow-md">Sourcing<br>Checklist</h2>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-bold tracking-widest text-brand-teal uppercase px-2.5 py-1 bg-brand-teal/10 rounded-full border border-brand-teal/20">Guides</span>
+              <span class="text-xs text-gray-500 font-medium">Apr 30, 2026</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-brand-emerald transition-colors">The Ultimate B2B Sourcing Checklist</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">What to ask your manufacturing partner before placing a high-volume order. Navigating MOQs, timelines, and sampling.</p>
+            <a href="b2b-sourcing-checklist.html" class="mt-auto text-brand-teal font-bold text-sm group-hover:underline inline-flex items-center gap-1">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FOOTER SECTION (Same as index.html)
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="py-12 sm:py-16 px-4 sm:px-8 lg:px-16 bg-[#02050D] border-t border-white/5 text-gray-400 relative z-10 mt-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="pt-8 mt-8 border-t border-white/5 flex flex-wrap items-center justify-center sm:justify-between gap-4 text-xs text-center sm:text-left">
+        <p class="w-full sm:w-auto">© 2026 Ausman. All rights reserved.</p>
+        <p class="text-gray-600 w-full sm:w-auto">Designed for universities, clubs, and large institutions</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-b', 'border-white/10');
+        navbar.classList.remove('py-4');
+        navbar.classList.add('py-3');
+      } else {
+        navbar.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'border-b', 'border-white/10');
+        navbar.classList.add('py-4');
+        navbar.classList.remove('py-3');
+      }
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bLine1 = document.getElementById('burger-line1');
+    const bLine2 = document.getElementById('burger-line2');
+    const bLine3 = document.getElementById('burger-line3');
+    let menuOpen = false;
+
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.remove('hidden');
+        bLine1.style.transform = 'translateY(6px) rotate(45deg)';
+        bLine2.style.opacity = '0';
+        bLine3.style.transform = 'translateY(-6px) rotate(-45deg)';
+      } else {
+        closeMobileMenu();
+      }
+    });
+
+    function closeMobileMenu() {
+      menuOpen = false;
+      mobileMenu.classList.add('hidden');
+      bLine1.style.transform = 'none';
+      bLine2.style.opacity = '1';
+      bLine3.style.transform = 'none';
+    }
+
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+    const sunIcon = document.getElementById('theme-toggle-sun');
+    const moonIcon = document.getElementById('theme-toggle-moon');
+    const sunIconMobile = document.getElementById('theme-toggle-sun-mobile');
+    const moonIconMobile = document.getElementById('theme-toggle-moon-mobile');
+
+    function updateThemeUI(isLight) {
+      if (isLight) {
+        document.body.classList.add('light-mode');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        sunIconMobile.classList.remove('hidden');
+        moonIconMobile.classList.add('hidden');
+      } else {
+        document.body.classList.remove('light-mode');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        sunIconMobile.classList.add('hidden');
+        moonIconMobile.classList.remove('hidden');
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    const isLightMode = savedTheme === 'light';
+    updateThemeUI(isLightMode);
+
+    function toggleTheme() {
+      const currentlyLight = document.body.classList.contains('light-mode');
+      const nextThemeIsLight = !currentlyLight;
+      localStorage.setItem('theme', nextThemeIsLight ? 'light' : 'dark');
+      updateThemeUI(nextThemeIsLight);
+    }
+
+    themeToggleBtn.addEventListener('click', toggleTheme);
+    themeToggleBtnMobile.addEventListener('click', toggleTheme);
+  </script>
+
+</body>
+</html>
